@@ -23,10 +23,8 @@ const HomePage = () =>{
                 <ImageSlider slides={slides} />
             </div>
 
-            <div>
-                <Footer />
-                <LargeWithAppLinksAndSocial />
-            </div>
+            
+
         </div>
     )
 }
