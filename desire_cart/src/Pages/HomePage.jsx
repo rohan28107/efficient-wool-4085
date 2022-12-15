@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import ImageSlider from "../Components/ImageSlider";
 import {Footer, LargeWithAppLinksAndSocial} from "../Components/Footer"
+import CategoryHeading from "../Components/CategoryHeading"
 
 
 const HomePage = () =>{
@@ -24,9 +25,9 @@ const HomePage = () =>{
             </div>
 
             <div>
-                <Footer />
-                <LargeWithAppLinksAndSocial />
+                <CategoryHeading />
             </div>
+
         </div>
     )
 }
