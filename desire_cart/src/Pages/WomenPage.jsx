@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Grid, GridItem, Heading, SimpleGrid, Box, useColorModeValue  } from "@chakra-ui/react";
+import { GridItem, Heading, SimpleGrid, Box, useColorModeValue  } from "@chakra-ui/react";
 import WomensProductCard from "../Components/WomensProductCard"
 
 

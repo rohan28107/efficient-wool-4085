@@ -1,19 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Grid, GridItem, SimpleGrid, Box, Heading, useColorModeValue  } from "@chakra-ui/react";
+import { GridItem, SimpleGrid, Box, Heading, useColorModeValue  } from "@chakra-ui/react";
 import MensProductCard from "../Components/MensProductCard";
 
 const MenPage = () =>{
     const [data, setData] = useState([]);
-    // const [posts, setPosts] = useState([])
-    const [searchResults, setSearchResults] = useState([])
     
     useEffect(() => {
         axios.get(`https://rohan-lyst-api.onrender.com/mensproducts`)
         .then((res) => {
             setData(res.data);
-            setSearchResults(res.data);
         })
     },[]);
 

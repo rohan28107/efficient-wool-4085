@@ -18,7 +18,6 @@ import { Link as RouterLink} from "react-router-dom";
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
-  // const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -37,6 +36,11 @@ export default function Navbar() {
             </RouterLink>
           </Box>
           <Box>
+            <RouterLink to="/allproducts">
+              <Text>All Products</Text>
+            </RouterLink>
+          </Box>
+          <Box>
             <RouterLink to="/womensproducts">
               <Text>WOMEN</Text>
             </RouterLink>
@@ -49,14 +53,14 @@ export default function Navbar() {
           </Box>
           <Box>
             <Stack spacing={3}>
-                <InputGroup border={20} w='100%'>
+                {/* <InputGroup border={20} w='100%'>
                   <InputLeftElement
                     pointerEvents='none'
                     children={<Search2Icon color='black.300' />}
                     
                   />
                   <Input type='text' placeholder='SEARCH PRODUCTS'  w={900} id="search" />
-                </InputGroup>              
+                </InputGroup>               */}
             </Stack>
           </Box>
           <Box>
