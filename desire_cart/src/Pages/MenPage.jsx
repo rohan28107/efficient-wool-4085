@@ -6,15 +6,18 @@ import MensProductCard from "../Components/MensProductCard";
 
 const MenPage = () =>{
     const [data, setData] = useState([]);
+    // const [posts, setPosts] = useState([])
+    const [searchResults, setSearchResults] = useState([])
     
     useEffect(() => {
         axios.get(`https://rohan-lyst-api.onrender.com/mensproducts`)
         .then((res) => {
             setData(res.data);
+            setSearchResults(res.data);
         })
     },[]);
 
-    console.log(data);
+    // console.log(data);
     return (
         <div>
             {/* bg='#f5f4f2' */}

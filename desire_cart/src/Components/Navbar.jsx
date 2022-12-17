@@ -1,4 +1,3 @@
-
 import {
   Box,
   Flex,
@@ -10,7 +9,7 @@ import {
   Input,
   InputGroup, 
   InputLeftElement,
-  SimpleGrid 
+  SimpleGrid,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon, Search2Icon } from '@chakra-ui/icons';
 import { RiShoppingCart2Fill } from 'react-icons/ri';
@@ -20,6 +19,7 @@ import { Link as RouterLink} from "react-router-dom";
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   // const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -49,14 +49,14 @@ export default function Navbar() {
           </Box>
           <Box>
             <Stack spacing={3}>
-              <InputGroup border={20} w='100%'>
-                <InputLeftElement
-                  pointerEvents='none'
-                  children={<Search2Icon color='black.300' />}
-                  
-                />
-                <Input type='tel' placeholder='SEARCH PRODUCTS' w={900} />
-              </InputGroup>
+                <InputGroup border={20} w='100%'>
+                  <InputLeftElement
+                    pointerEvents='none'
+                    children={<Search2Icon color='black.300' />}
+                    
+                  />
+                  <Input type='text' placeholder='SEARCH PRODUCTS'  w={900} id="search" />
+                </InputGroup>              
             </Stack>
           </Box>
           <Box>
