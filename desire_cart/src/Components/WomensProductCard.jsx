@@ -9,7 +9,7 @@ import {
   } from '@chakra-ui/react';
   import {Link as RouterLink} from "react-router-dom";
   
-  export default function ProductCard({ 
+  export default function WomensProductCard({ 
     image, 
     id, 
     description, 
@@ -20,8 +20,8 @@ import {
     count}) {
     return (
       <Center py={12}>
-        <RouterLink to={`/products/${id}`}>
-  
+        <RouterLink to={`/womensproducts/${id}`}>
+        {/* console.log(id); */}
           <Box
             role={'group'}
             p={6}
@@ -80,9 +80,6 @@ import {
                 <Text  color={'gray.600'}>
                   {rating}
                 </Text>
-                {/* <Text  color={'gray.600'}>
-                  {count}
-                </Text> */}
               </Stack>
             </Stack>
           </Box>

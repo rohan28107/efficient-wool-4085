@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Grid, GridItem, SimpleGrid, Box, Heading, useColorModeValue  } from "@chakra-ui/react";
-import ProductCard from "../Components/ProductCard";
+import MensProductCard from "../Components/MensProductCard";
 
 const MenPage = () =>{
     const [data, setData] = useState([]);
@@ -28,7 +28,7 @@ const MenPage = () =>{
                     
                     {data?.length > 0 && data.map((e) => {
                         return (<GridItem key={e.id}>
-                            <ProductCard 
+                            <MensProductCard 
                                 category={e.category} 
                                 image={e.image} 
                                 id={e.id}

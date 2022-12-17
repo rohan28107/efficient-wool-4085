@@ -5,18 +5,19 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import MenPage from "../Pages/MenPage";
 import WomenPage from "../Pages/WomenPage";
-import ProductDetails from "./ProductDetails";
+import MensProductDetails from "./MensProductDetails";
+import WomensProductDetails from "./WomensProductDetails";
 
 const AllRoutes = () => {
     return <div>
         <Routes>
             <Route path="/" element={<HomePage />}></Route>
-            <Route path="/menpage" element={<MenPage />}></Route>
-            <Route path="/womenpage" element={<WomenPage />}></Route>
+            <Route path="/mensproducts" element={<MenPage />}></Route>
+            <Route path="/womensproducts" element={<WomenPage />}></Route>
             <Route path="/register" element={<Register />}></Route>
             <Route path="/login" element={<Login />}></Route>
-            {/* <Route path="/menpage/:id" element={<ProductDetails />}></Route>
-            <Route path="/womenpage/:id" element={<ProductDetails />}></Route> */}
+            <Route path="/mensproducts/:id" element={<MensProductDetails />}></Route>
+            <Route path="/womensproducts/:id" element={<WomensProductDetails />}></Route>
         </Routes>
     </div>
 }
