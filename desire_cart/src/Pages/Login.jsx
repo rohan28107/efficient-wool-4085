@@ -11,6 +11,8 @@
     Heading,
     Text,
     useColorModeValue,
+    Alert,
+    AlertIcon,
   } from '@chakra-ui/react';
   import { useState, useRef, useContext } from "react"
   import { useNavigate } from "react-router-dom";
@@ -52,7 +54,15 @@
     .then(res => {
       navigate("/allproducts");
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      console.log(err);
+      return (
+        <Alert status='error'>
+          <AlertIcon />
+          Wrong Email or Password!!
+        </Alert>
+      )
+    });
   }
     return (
       <div>

@@ -9,7 +9,7 @@ import MensProductDetails from "./MensProductDetails";
 import WomensProductDetails from "./WomensProductDetails";
 import AllProducts from "../Pages/AllProducts";
 import AllProductsDetails from "./AllProductsDetails";
-
+import Cart from "./Cart";
 
 
 const AllRoutes = () => {
@@ -24,6 +24,7 @@ const AllRoutes = () => {
             <Route path="/allproducts/:id" element={<AllProductsDetails />}></Route>
             <Route path="/mensproducts/:id" element={<MensProductDetails />}></Route>
             <Route path="/womensproducts/:id" element={<WomensProductDetails />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
         </Routes>
     </div>
 }
