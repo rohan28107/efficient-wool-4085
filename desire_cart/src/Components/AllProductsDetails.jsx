@@ -1,6 +1,5 @@
 import {
     Box,
-    chakra,
     Container,
     Stack,
     Text,
@@ -12,23 +11,19 @@ import {
     SimpleGrid,
     StackDivider,
     useColorModeValue,
-    VisuallyHidden,
     List,
     ListItem,
     Center,
   } from '@chakra-ui/react';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
-// import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { useEffect, useState, useContext } from 'react';
 import { MdLocalShipping } from 'react-icons/md';
 import { NavLink, useParams } from 'react-router-dom';
-import CartAmountToggle from "../Components/CartAmountToggle"
-
+import CartAmountToggle from "../Components/CartAmountToggle";
 
 
   export default function AllProductsDetails() {
     const {id} = useParams();
-    
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
@@ -52,16 +47,16 @@ import CartAmountToggle from "../Components/CartAmountToggle"
         rating, 
         count} = product;
 
-        // const [amount, setAmount] = useState(1);
+        const [amount, setAmount] = useState(1);
 
-    // const setDecrease = () => {
-    //   amount > 1 ? setAmount(amount - 1) : setAmount(1);
-    // }
+    const setDecrease = () => {
+      amount > 1 ? setAmount(amount - 1) : setAmount(1);
+    }
 
-    // const setIncrease = () => {
-    //   console.log(rating.count);
-    //   amount < rating.count ? setAmount(amount + 1) : setAmount(rating.count);
-    // }
+    const setIncrease = () => {
+      console.log(rating.count);
+      amount < rating.count ? setAmount(amount + 1) : setAmount(rating.count);
+    }
 
     // console.log(rating.count);
 
@@ -155,11 +150,11 @@ import CartAmountToggle from "../Components/CartAmountToggle"
               
               <Box>
                 <Center>
-                  {/* <CartAmountToggle
+                  <CartAmountToggle
                     amount={amount}
                     setDecrease={setDecrease}
                     setIncrease={setIncrease}
-                    /> */}
+                    />
                 </Center>
                 
                 <NavLink to="/cart">

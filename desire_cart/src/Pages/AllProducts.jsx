@@ -1,20 +1,16 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { Box, Flex, Heading, useColorModeValue,Spacer, Text, FormControl, Select, FormLabel, Button, Square, Center  } from "@chakra-ui/react";
 import SearchBar from '../Components/SearchBar';
 import ListPage from '../Components/ListPage';
 import LoadingIndicator from "../Components/LoadingIndicator";
-import FilterSection from "../Components/FilterSection";
-import Sort from "../Components/Sort";
-import Pagination from "../Components/Pagination";
 import { Link as RouterLink} from "react-router-dom";
 
 
-// https://rohan-lyst-api.onrender.com/allproducts?_page=1&_limit=10&_sort=price&_order=asc
+
 const getDatasPage = async (page = 1) => {
     let response = await axios.get(`https://rohan-lyst-api.onrender.com/allproducts?_page=${page}`)
-    // console.log(sortPrice); &_sort=price&_limit=10&_order=${sortPrice}
     return response;
 } 
 
@@ -23,7 +19,6 @@ const AllProducts = () =>{
     const [loading, setLoading] = useState(false);
     const [searchResults, setSearchResults] = useState([]);
     const [page, setPage] = useState(1)
-    // const [sortPrice, setSortPrice]  = useState('asc');
 
     useEffect(() => {
         setLoading(true);
@@ -40,24 +35,12 @@ const AllProducts = () =>{
             console.log(err);
         })
     },[page]);
-
-    // const content = datas.map(data => <Post key={data.id} data={data} />)
     
 
     const nextPage = () => setPage(prev => prev + 1)
 
     const prevPage = () => setPage(prev => prev - 1)
 
-    // const handleLowToHigh = () => {
-    //     setSortPrice("desc")
-    // }
-
-    // const handleHighToLow = () => {
-    //     setSortPrice("asc")
-    // }
-
-
-    // console.log(datas);
     return (
         <div>
             <Box  h={100} alignItems='center' p={5} border={1} borderColor='black' bg={useColorModeValue('#f5f4f2', 'black')}>
