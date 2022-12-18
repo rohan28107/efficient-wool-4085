@@ -15,12 +15,16 @@ import {
     VisuallyHidden,
     List,
     ListItem,
+    Center,
   } from '@chakra-ui/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-  import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-  import { MdLocalShipping } from 'react-icons/md';
-  import { useParams } from 'react-router-dom';
+// import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { MdLocalShipping } from 'react-icons/md';
+import { NavLink, useParams } from 'react-router-dom';
+import CartAmountToggle from "../Components/CartAmountToggle"
+
+
 
   export default function AllProductsDetails() {
     const {id} = useParams();
@@ -37,8 +41,9 @@ import { useEffect, useState } from 'react';
                 console.log(err);
             })
     },[id]);
-
-    console.log(product);
+    
+    
+    // console.log(product);
     const {image, 
         description, 
         category,
@@ -46,6 +51,19 @@ import { useEffect, useState } from 'react';
         price, 
         rating, 
         count} = product;
+
+        // const [amount, setAmount] = useState(1);
+
+    // const setDecrease = () => {
+    //   amount > 1 ? setAmount(amount - 1) : setAmount(1);
+    // }
+
+    // const setIncrease = () => {
+    //   console.log(rating.count);
+    //   amount < rating.count ? setAmount(amount + 1) : setAmount(rating.count);
+    // }
+
+    // console.log(rating.count);
 
     return (
       <Container maxW={'7xl'}>
@@ -133,22 +151,36 @@ import { useEffect, useState } from 'react';
                 </Text>
               </Box>
             </Stack>
-  
-            <Button
-              rounded={'none'}
-              w={'full'}
-              mt={8}
-              size={'lg'}
-              py={'7'}
-              bg={useColorModeValue('gray.900', 'gray.50')}
-              color={useColorModeValue('white', 'gray.900')}
-              textTransform={'uppercase'}
-              _hover={{
-                transform: 'translateY(2px)',
-                boxShadow: 'lg',
-              }}>
-              Proceed to Cart
-            </Button>
+              
+              
+              <Box>
+                <Center>
+                  {/* <CartAmountToggle
+                    amount={amount}
+                    setDecrease={setDecrease}
+                    setIncrease={setIncrease}
+                    /> */}
+                </Center>
+                
+                <NavLink to="/cart">
+                  <Button
+                      rounded={'none'}
+                      w={'full'}
+                      mt={8}
+                      size={'lg'}
+                      py={'7'}
+                      bg={useColorModeValue('gray.900', 'gray.50')}
+                      color={useColorModeValue('white', 'gray.900')}
+                      textTransform={'uppercase'}
+                      _hover={{
+                        transform: 'translateY(2px)',
+                        boxShadow: 'lg',
+                      }}>
+                      Proceed to Cart
+                  </Button>
+                </NavLink>
+              </Box>
+            
   
             <Stack direction="row" alignItems="center" justifyContent={'center'}>
               <MdLocalShipping />

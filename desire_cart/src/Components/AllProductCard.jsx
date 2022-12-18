@@ -12,6 +12,7 @@ import {
 
 const AllProductCard = ({ data }) => {
 
+
     return (
         <Center py={12}>
           <RouterLink to={`/allproducts/${data.id}`}>
