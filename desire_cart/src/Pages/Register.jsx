@@ -13,7 +13,7 @@ import {
   import SocialMedia from "../Components/SocialMedia";
   import { useState } from 'react';
   // import { Link as RouterLink} from "react-router-dom";
-  import { Navigate } from "react-router-dom";
+  import { useNavigate } from "react-router-dom";
 
 
 
@@ -23,6 +23,7 @@ import {
       password: '', // required
       // username: '' // optional
   })
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     console.log("hello");
@@ -35,6 +36,8 @@ import {
           body: JSON.stringify(formData)
       })
       .then(res =>{console.log({res}); res.json()})
+        navigate("/login")
+
       // .then(data => {console.log({data}); console.log(data)})
       // console.log(formData);
   }

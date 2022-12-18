@@ -139,6 +139,3 @@ export const LargeWithAppLinksAndSocial = () => {
     </Box>
   );
 }
-
-
-// export default Footer;

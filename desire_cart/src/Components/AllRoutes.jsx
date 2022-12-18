@@ -11,6 +11,7 @@ import AllProducts from "../Pages/AllProducts";
 import AllProductsDetails from "./AllProductsDetails";
 
 
+
 const AllRoutes = () => {
     return <div>
         <Routes>

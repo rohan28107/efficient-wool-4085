@@ -79,12 +79,6 @@ import {
                         {/* marginLeft={-250} w={100} marginTop={8} */}
                     </GridItem>
                     </SimpleGrid>
-                {/* </Container> */}
-                {/* <Container py={5} maxW={'container.lg'}>
-                    <Heading as={'h2'}>SIGN UP FOR SMARTER SHOPPING</Heading>
-                    <Button backgroundColor='black' color='white'>Join→</Button>
-                </Container> */}
-            {/* </Flex> */}
         </div>
       
     );

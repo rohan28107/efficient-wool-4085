@@ -3,14 +3,7 @@ import AllProductCard from "./AllProductCard";
 import { SimpleGrid } from "@chakra-ui/react";
 
 
-const ListPage = ({ searchResults, loading, page }) => {
-    
-
-    // if(loading){
-    //     return <h2>Loading.....</h2>
-    //   }
-
-      
+const ListPage = ({ searchResults }) => {      
 
     const results = searchResults.map(data => 
             <AllProductCard key={data.id} data={data} />
@@ -18,9 +11,6 @@ const ListPage = ({ searchResults, loading, page }) => {
 
 
     const content = results?.length ? results : <article><p>No Matching Product</p></article>
-
-
-   
 
 
     return (
