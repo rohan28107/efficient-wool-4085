@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Grid, GridItem, SimpleGrid, Box, Heading, useColorModeValue  } from "@chakra-ui/react";
+import { GridItem, SimpleGrid, Box, Heading, useColorModeValue  } from "@chakra-ui/react";
 import MensProductCard from "../Components/MensProductCard";
 
 const MenPage = () =>{
@@ -14,7 +14,7 @@ const MenPage = () =>{
         })
     },[]);
 
-    console.log(data);
+    // console.log(data);
     return (
         <div>
             {/* bg='#f5f4f2' */}
